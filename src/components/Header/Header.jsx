@@ -1,6 +1,7 @@
-import logo from '../assets/logo.svg';
-import facebook from '../assets/facebook.svg'
-import instagram from '../assets/instagram.svg'
+import logo from '../../assets/logo.svg';
+import facebook from '../../assets/facebook.svg'
+import instagram from '../../assets/instagram.svg'
+import './header.css'
 export default function header(){
     return(
         <header>
