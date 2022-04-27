@@ -1,47 +1,59 @@
-import logo from '../../assets/logo.svg';
-import facebook from '../../assets/facebook.svg'
-import instagram from '../../assets/instagram.svg'
-import './header.css'
-export default function header(){
-    return(
-        <header>
-            <div className="header-top">
-                <div className="container header-top__content">
-                    <div className="header-top__shedule">Mon-Thu:  9:00 AM - 5:30 PM</div>
-                    <p className="header-top__address">Visit our showroom in 1234 Street Adress City Address, 1234 <a href="#">Contacts us</a></p>
-                    <div className="header-top__contacts">
-                        <div className="header-top__phone">
-                        Call us: <a href="tel:0012345678">(00) 1234 5678</a>
-                        </div>
-                        <a href="#"><img src={facebook} alt="facebook-icon" /></a>
-                        <a href="#"><img src={instagram} alt="" /></a>
-                    </div>
-                </div>
+import { Link } from 'react-router-dom';
+import clsx from 'clsx';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Facebook } from '../../assets/facebook.svg';
+import { ReactComponent as Instagram } from '../../assets/instagram.svg';
+import { ReactComponent as SearchIcon } from '../../assets/search.svg';
+import css from './header.module.css';
+
+function Header() {
+  return (
+    <header className={css.header}>
+      <div className={css.top}>
+        <div className={clsx(css.content, "container")}>
+          <div className={css.schedule}>Mon-Thu: 9:00 AM - 5:30 PM</div>
+          <p className={css.address}>
+            Visit our showroom in 1234 Street Adress City Address, 1234{' '}
+            <a href="#">Contact Us</a>
+          </p>
+          <div className={css.contacts}>
+            <div className={css.phone}>
+              Call Us: <a href="tel:0012345678">(00) 1234 5678</a>
             </div>
-            <div className="header-main container">
-                <img src={logo} alt="" className="logo" />
-                <nav className="links">
-                    <a href="#">Laptop</a>
-                    <a href="#">Desktop PCs</a>
-                    <a href="#">Networking Devices</a>
-                    <a href="#">Printers & Scanners</a>
-                    <a href="#">PC Parts</a>
-                    <a href="#">All Other Products</a>
-                    <a href="#">Repairs</a>
-                    <a href="#">Our Deals</a>
-                </nav>
-                <div className="actions">
-                    <button className="btn">
-                        <img src="" alt="" />
-                    </button>
-                    <button className="btn">
-                        <img src="" alt="" />
-                    </button>
-                    <button className="avatar">
-                        <img src="" alt="" />
-                    </button>
-                </div>
-            </div>
-        </header>
-    )
+            <a href="https://facebook.com">
+              <Facebook />
+            </a>
+            <a href="https://instagram.com">
+             <Instagram />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className={clsx(css.main, "container")}>
+        <Link to="/"><Logo className={css.logo} /></Link>
+        <nav className={css.links}>
+          <Link to="/category/laptops">Laptops</Link>
+          <Link to="/category/desktops">Desktop PCs</Link>
+          <Link to="/category/networks">Networking Devices</Link>
+          <Link to="/category/PC-parts">PC Parts</Link>
+          <Link to="/category/other">All Other Products</Link>
+          <Link to="/repairs">Repairs</Link>
+          <Link to="/deals">Our Deals</Link>
+        </nav>
+        <div className={css.actions}>
+          <button className={css.btn}>
+            <SearchIcon />
+          </button>
+          <button className={css.btn}>
+            <img src="" alt="" />
+          </button>
+          <button className={css.avatar}>
+            <img src="https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg" alt="" />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
 }
+
+export default Header;

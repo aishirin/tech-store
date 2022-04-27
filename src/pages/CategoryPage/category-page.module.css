@@ -1,0 +1,25 @@
+.category{
+    display: grid;
+    grid-template-columns: 234px 1fr;
+    column-gap: 8px;
+}
+.filer{
+    background-color: #AAa;
+}
+.colorContent{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: 8px;
+}
+.color{
+    display: block;
+    height: 23px;
+    width: 23px;
+}
+.color input{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+    
+}

@@ -1,0 +1,23 @@
+.section{
+    height: 350px;
+    max-width: 232px;
+    background-image: url("../../assets/bgimg1.jpg");
+    display:grid;
+    grid-auto-flow: row;
+    align-items:end;
+    justify-items: center;
+    padding: 15px;
+}
+.title{
+    font-weight: 700;
+    font-size: 22px;
+    color: #FFFF;
+    text-align:center;
+    width: 100px;
+}
+.link{
+    font-weight: 400;
+    font-size: 13px;
+    color: #FFFFFF;
+    text-decoration:underline;
+}

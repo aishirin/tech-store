@@ -1,23 +1,23 @@
+import {Routes , Route} from 'react-router-dom'
 import Header from './components/Header/Header';
 import Carousel from './components/Carousel/Carousel';
-import Cards from './components/Cards/Cards';
+import Card from './components/Card/Card';
+import Nav from './components/Nav/Nav';
+import { ReactComponent as LogoZip } from './assets/logo__zip.svg';
+import CatalogPage  from './pages/CatalogPage';
+import HomePage from './pages/HomePage';
+import CheckoutPage from './pages/CheckoutPage';
+import CategoryPage from './pages/CategoryPage/CategoryPage'
 function App() {
   return (
     <div className="App">
       <Header />
       <Carousel />
-      <section>
-        <h2>New products</h2>
-        <div>
-          <Cards 
-          inStock={true}
-          title="EX DISPLAY : MSI Pro 16 Flex-03AU 15.6 MULTITOUCH All-In-On"
-          image="https://some-img.jpg"
-          priceOld={499}
-          price={499}
-          />
-        </div>
-      </section>
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/category/:name" element={<CategoryPage />}/>
+        <Route path="/checkout" element={<CheckoutPage />}/>
+      </Routes>
     </div>
   );
 }
